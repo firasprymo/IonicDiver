@@ -1,5 +1,8 @@
 {
   "name": "mediaIonic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

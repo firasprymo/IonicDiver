@@ -1,0 +1,13 @@
+npm i @ionic/pwa-elements
+ ionic g service shared/services/api
+ionic build
+npx cap add android
+
+//add 
+//add to main.ts
+import { defineCustomElements } from "@ionic/pwa-elements/loader";
+  defineCustomElements(window)
+
+// to use our app with device we use ngrock
+//just download it create an account then run the commande to save auththoken then open with termine land run ./ngrock http  'port'
+

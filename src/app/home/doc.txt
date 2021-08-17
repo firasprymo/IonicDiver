@@ -1,0 +1,59 @@
+ionic start testApp blank --type=angular --cordova
+cd testApp
+
+
+ionic cordova plugin add cordova-plugin-media-capture
+ionic cordova plugin add cordova-plugin-file
+ionic cordova plugin add cordova-plugin-media
+ionic cordova plugin add cordova-plugin-streaming-media
+ionic cordova plugin add com-sarriaroman-photoviewer
+ionic cordova plugin add cordova-plugin-telerik-imagepicker
+
+//like image capture to open camera
+npm install @ionic-native/media-capture
+//used to manage file
+npm install @ionic-native/file
+//used to play sound
+npm install @ionic-native/media
+//used to play video
+npm install @ionic-native/streaming-media
+//used to play photo
+npm install @ionic-native/photo-viewer
+//used to select multiple file from the phone directory
+npm install @ionic-native/image-picker
+
+
+// For the imagepicker on Android we need a fix
+cordova plugin add cordova-android-support-gradle-release
+
+
+
+//if you use ios you need to set some permission in config.xml
+<edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+    <string>need camera access to take pictures</string>
+</edit-config>
+<edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+    <string>need photo library access to get pictures from there</string>
+</edit-config>
+<edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
+    <string>need to store photos to your library</string>
+</edit-config>
+<edit-config file="*-Info.plist" mode="merge" target="NSMicrophoneUsageDescription">
+    <string>need to record your voice</string>
+</edit-config>
+// if you use android you have to add those line to config.xml
+  <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+            <application android:requestLegacyExternalStorage="true" />
+        </edit-config>
+// add all module in
+app module:
+providers:[
+
+ ImagePicker
+ MediaCapture
+ Media
+ StreamingMedia
+ PhotoViewer
+]
+//in home ts we add
+providers
