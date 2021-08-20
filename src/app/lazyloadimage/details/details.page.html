@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lazyloadimage</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="lazy">
+
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="loadImage()" expand="full">
+    Click me
+  </ion-button>
+  <img [lazyLoad]="myImage | async" />
+  <ion-card>
+
+    <ion-card-content>
+      Fail?
+      <img [lazyLoad]="'abc'" />
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngFor="let num of [].constructor(100);let i=index;">
+
+    <ion-card-content>
+      <img [lazyLoad]="image" />
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lazyloadimage</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="">
+
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink]="['/details']" expand="block" fill="clear" shape="round">
+    Details
+  </ion-button>
+  <img [defaultImage]="defaultImage" [lazyLoad]="image" />
+</ion-content>

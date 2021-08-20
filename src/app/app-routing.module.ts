@@ -4,11 +4,23 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'image-upload',
-    loadChildren: () => import('./image-upload/image-upload.module').then( m => m.ImageUploadPageModule)
+    loadChildren: () => import('./image-upload/image-upload.module').then(m => m.ImageUploadPageModule)
+  },
+  {
+    path: 'loading',
+    loadChildren: () => import('./loadinginterceptors/loadinginterceptors.module').then(m => m.LoadinginterceptorsPageModule)
+  },
+  {
+    path: 'lazy',
+    loadChildren: () => import('./lazyloadimage/lazyloadimage.module').then(m => m.LazyloadimagePageModule)
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./lazyloadimage/details/details.module').then(m => m.DetailsPageModule)
   },
   // {
   //   path: '',

@@ -17,6 +17,7 @@ import { SharedComponentsModule } from './ionNav/components/shared-components.mo
 import { AccountPageModule } from './ionNav/account/account.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JWTInterceptor } from './shared/Interceptors/JWInterceptors';
+import { HttpRequestinterceptor } from './loadinginterceptors/httploading.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { JWTInterceptor } from './shared/Interceptors/JWInterceptors';
     Media,
     StreamingMedia,
     PhotoViewer,
-    { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: HttpRequestinterceptor, multi: true },
 
   ],
   bootstrap: [AppComponent],

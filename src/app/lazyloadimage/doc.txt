@@ -1,0 +1,4 @@
+ionic start lazyimage blank --type=angular --capacitor
+npm i ng-lazyload-image
+
+ionic g page details
